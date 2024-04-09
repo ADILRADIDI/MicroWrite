@@ -1,0 +1,14 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  text-decoration: none;
+  position: relative;
+}
+#first_cat {
+  border-bottom: 3px solid gray;
+}
+input {
+  border: 0px;
+}
