@@ -32,24 +32,38 @@
         />
         <input
           type="text"
+          id="description"
           contenteditable="true"
           placeholder="Tell your story"
           class="w-full h-60 bg-gray-300 rounded-3xl outline-none text-xl px-5"
         />
 
-        <hr class="" />
+        <!-- <img class="w-8" src="picture/imag.svg" alt="" /> -->
+        <hr />
         <div class="flex items-center justify-around mt-5 pb-8">
           <div class="flex">
             <ul class="flex">
               <li>
-                <img class="w-8" src="picture/imag.svg" alt="" />
+                <div class="flex bg-yellow-500 px-10 rounded-3xl py-2 font-bold">
+                  <img class="w-8" src="picture/imag.svg" alt="" />
+                  <label for="input_file" class="  text-white text-2xl px-10 m-auto
+                   hover:text-black">Add Picture</label>
+                </div>
+                <input
+                  type="file"
+                  accept="image/jpeg, image/png, image/jpg"
+                  name=""
+                  id="input_file"
+                  class="hidden"
+                />
               </li>
             </ul>
           </div>
           <div>
             <a
-              href="#"
-              class="bg-blue-600 rounded-2xl w-40 text-white text-xl px-5 py-2"
+              href="index.html"
+              id="btn"
+              class="bg-blue-600 rounded-3xl w-40 text-white text-xl px-5 py-2 hover:text-black font-bold"
               >Publish</a
             >
           </div>
