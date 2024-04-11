@@ -1,7 +1,8 @@
 let continar1 = document.querySelector("#continar1");
 let continar2 = document.querySelector("#continar2");
 let continar3 = document.querySelector("#continar3");
-// button write in version desktop and tablette 
+let continar4 = document.querySelector("#container4");
+// button write in version desktop and tablette
 let write = document.querySelector(".write");
 
 // button write in version mobile
@@ -78,7 +79,7 @@ function add_post() {
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth() + 1;
   const day = currentDate.getDate();
-// aff date exact in post
+  // aff date exact in post
   let p2 = document.createElement("p");
   p2.textContent = day + "." + month + "." + year;
   div2.appendChild(p2);
@@ -127,8 +128,8 @@ function add_post() {
 
   n_post++;
 
+  //affich container post
   let container_post = Array.from(document.querySelectorAll(".container_post"));
-
   container_post.forEach((ele, i) => {
     ele.addEventListener("click", function () {
       continar1.style.display = "none";
@@ -139,6 +140,7 @@ function add_post() {
     });
   });
 
+  //remove post after adding
   let remove_post = Array.from(document.querySelectorAll(".remove_post"));
   let d1 = Array.from(document.querySelectorAll(".ps"));
   remove_post.forEach((x, i) => {
@@ -149,18 +151,157 @@ function add_post() {
   });
 }
 btnz.addEventListener("click", add_post);
-
-
 //afeer click like change source
 let like = document.getElementById("applaudise");
-like.addEventListener("click",function(){
+like.addEventListener("click", function () {
   let imj = document.getElementById("image_like");
   imj.src = "picture/likeclick.svg";
 });
 // afeer click save change source
 let save = document.getElementById("sv");
-save.addEventListener("click",function(){
+save.addEventListener("click", function () {
   let imej = document.getElementById("image_save");
   imej.src = "picture/saveclick.svg";
 });
+
+//add comment
+let comm = Array.from(document.querySelectorAll(".cmt_aa"));
+comm.forEach((ele, i) => {
+  ele.addEventListener("click", function () {
+    let con2 = document.querySelector("#continar2");
+    con2.style.display = "none";
+    let con4 = document.querySelector("#container4");
+    con4.style.display = "block";
+  });
+});
+
+
+// Create a div element with class "comment"
+let diiv = document.createElement("div");
+diiv.classList.add("comment hidden");
+// Append the div to "continar4" (assuming it's already defined)
+continar4.appendChild(diiv);
+
+// Create a section element for comments
+let Sect_ion = document.createElement("section");
+Sect_ion.id = "comment";
+
+
+
+// Create header for comments section
+let header_div = document.createElement("div");
+header_div.classList.add("flex");
+
+let header_a = document.createElement("a");
+header_a.href = "post.html";
+let headerImage = document.createElement("img");
+headerImage.classList.add("w-16");
+headerImage.src = "picture/return.svg";
+header_a.appendChild(headerImage);
+header_div.appendChild(header_a);
+
+let header_title = document.createElement("h1");
+header_title.classList.add("m-auto", "items-center", "font-bold", "text-3xl");
+header_title.textContent = "Responses";
+header_div.appendChild(header_title);
+
+// Append header to the section
+Sect_ion.appendChild(header_div);
+Sect_ion.appendChild(document.createElement("hr"));
+
+// Create rectangle for input
+let Rectangle = document.createElement("div");
+Rectangle.classList.add(
+  "bg-yellow-100",
+  "m-auto",
+  "items-center",
+  "w-4/5",
+  "mt-5",
+  "rounded-2xl",
+);
+let input_field = document.createElement("input");
+input_field.type = "text";
+input_field.contentEditable = true;
+input_field.placeholder = "what are you thoughts?";
+input_field.classList.add(
+  "w-full",
+  "h-56",
+  "outline-none",
+  "bg-yellow-100",
+  "text-2xl",
+  "input_comment"
+);
+Rectangle.appendChild(input_field);
+
+// Create button for publishing reply
+let button_dv = document.createElement("div");
+let button_a = document.createElement("a");
+button_a.href = "#";
+button_a.textContent = "Respond";
+button_a.classList.add(
+  "text-white",
+  "text-xl",
+  "bg-yellow-500",
+  "w-36",
+  "rounded-2xl",
+  "font-bold",
+  "m-auto",
+  "items-center",
+  "justify-center",
+  "flex",
+  "hover:text-black"
+);
+button_dv.appendChild(button_a);
+Rectangle.appendChild(button_dv);
+
+// Append rectangle to the section
+Sect_ion.appendChild(Rectangle);
+Sect_ion.appendChild(document.createElement("hr"));
+
+// Append section to the div container "diiv"
+diiv.appendChild(Sect_ion);
+
+// Create second section for listing comments
+let listCommentsSection = document.createElement("section");
+listCommentsSection.id = "list_comments";
+
+// Create a comment
+let commentDiv = document.createElement("div");
+commentDiv.id = "first_comment";
+let commentAccountDiv = document.createElement("div");
+commentAccountDiv.classList.add("flex");
+let commentAccountImage = document.createElement("img");
+commentAccountImage.src = "picture/aaazz.jpg";
+commentAccountImage.alt = "";
+commentAccountImage.classList.add("rounded-full", "w-10", "h-10", "mx-3");
+commentAccountDiv.appendChild(commentAccountImage);
+let commentAccountTitle = document.createElement("h1");
+commentAccountTitle.textContent="smart man"
+commentAccountTitle.classList.add("text-xl", "font-bold");
+commentAccountDiv.appendChild(commentAccountTitle);
+commentDiv.appendChild(commentAccountDiv);
+let commentTextDiv = document.createElement("div");
+commentTextDiv.id = "text";
+let commentText = document.createElement("p");
+commentText.classList.add("text-base", "font-medium", "mx-4");
+commentText.textContent="i have this and we will go to ..... "
+commentTextDiv.appendChild(commentText);
+commentDiv.appendChild(commentTextDiv);
+let commentLinkDiv = document.createElement("div");
+let commentLikeLink = document.createElement("a");
+commentLikeLink.href = "#";
+let commentLikeImage = document.createElement("img");
+commentLikeImage.src = "picture/applause.svg";
+commentLikeImage.classList.add("w-10", "mx-5", "mt-3");
+commentLikeLink.appendChild(commentLikeImage);
+commentLinkDiv.appendChild(commentLikeLink);
+commentDiv.appendChild(commentLinkDiv);
+listCommentsSection.appendChild(commentDiv);
+listCommentsSection.appendChild(document.createElement("hr"));
+
+// Append the second section to the div container "diiv"
+diiv.appendChild(listCommentsSection);
+
+// Append the div container to the body
+document.body.appendChild(diiv);
 
