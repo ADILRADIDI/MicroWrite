@@ -11,310 +11,406 @@
     />
   </head>
   <body>
-    <div
-      class="add_post rounded-full bg-green-200 w-16 h-16 fixed bottom-0 right-0 mx-5 mb-3 block md:hidden lg:hidden xl:hidden"
-    >
-      <a href="addPost.html">
-        <img
-          class="w-10 h-16 flex items-center m-auto justify-center"
-          src="picture/write-svgrepo-com.svg"
-          alt=""
-        />
-      </a>
-    </div>
-    <nav class="flex m-auto justify-between items-center">
-      <div class="logo">
-        <img class="w-28" src="picture/logo.png" alt="logo" />
-      </div>
-      <div class="flex ">
-        <div  class="mx-3 hidden md:block lg:block xl:block">
-          <a href="addPost.html" class="bg-gray-300 rounded-full flex px-4">
-            <img src="picture/write-svgrepo-com.svg" class="w-10" alt="write icon">
-            <h1 class="font-bold text-2xl text-black items-center m-auto hover:text-white">write</h1>
-          </a>
-        </div>
-        <div class="mx-3">
-          <a href="search.html">
-            <img class="w-10" src="picture/search.svg" alt="" />
-          </a>
-        </div>
-        <div class="mx-3">
-          <a href="#">
-            <img class="w-10" src="picture/notificatio.svg" alt="" />
-          </a>
-        </div>
-      </div>
-    </nav>
-    <hr class="bg-gray-300" />
-    <!--  -->
-    <section id="container_sections" class="flex m-auto items-center justify-center">
-      <div id="categ_posts">
-        <main class="" id="categorie">
-          <ul class="flex justify-between items-center font-bold">
-            <li>
-              <a href="#">
-                <img class="w-10" src="picture/plus.svg" alt="" />
-              </a>
-            </li>
-            <li id="first_cat">For you</li>
-            <li>Software development</li>
-            <li>technology</li>
-            <li></li>
-          </ul>
-          <hr class="bg-gray-200" />
-        </main>
-        <section class="mx-3" id="listposts">
-          <a href="post.html">
-            <div class="container_post w-full">
-              <div class="flex items-center">
-                <!-- icon +  writer + date-->
-                <img
-                  class="mt-2 mr-2 w-8 h-8 rounded-full"
-                  src="picture/victime1.jpg"
-                  alt=""
-                />
-                <p class="mr-5">daff peter</p>
-                <p>Apr,13,2035</p>
-              </div>
-              <div class="m-auto flex font-bold text-base">
-                <h1 class="ml-5">Top 10 PHP interview questions 2023</h1>
-              </div>
-              <div class="flex m-auto justify-around">
-                <div class="font-bold text-sm mt-5">
-                  <p>19min read</p>
-                </div>
-                <div class="flex mt-3">
-                  <a href="#">
-                    <img class="w-10" src="picture/save.svg" alt="" />
-                  </a>
-                  <a href="#">
-                    <!-- delete -->
-                    <img
-                      class="w-8 mt-1"
-                      src="picture/outlined remove.svg"
-                      alt=""
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </a>
-          <hr class="bg-gray-400" />
-        </section>
-        <section class="mx-3" id="posts">
-          <a href="#">
-            <div class="container_post w-full">
-              <div class="flex items-center">
-                <!-- icon +  writer + date-->
-                <img
-                  class="mt-2 mr-2 w-8 h-8 rounded-full"
-                  src="picture/elon mmusk.jpg"
-                  alt=""
-                />
-                <p class="mr-5">Elon mask</p>
-                <p>Mar,13,2024</p>
-              </div>
-              <div class="m-auto flex font-bold text-base">
-                <h1 class="ml-5">
-                  Automate your laravel app deployment with Github Actions
-                </h1>
-              </div>
-              <div class="flex m-auto justify-around">
-                <div class="font-bold text-sm mt-5">
-                  <p>7min read</p>
-                </div>
-                <div class="flex mt-3">
-                  <a href="#">
-                    <img class="w-10" src="picture/save.svg" alt="" />
-                  </a>
-                  <a href="#">
-                    <!-- delete -->
-                    <img
-                      class="w-8 mt-1"
-                      src="picture/outlined remove.svg"
-                      alt=""
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </a>
-          <hr class="bg-gray-400" />
-        </section>
-        <section class="mx-3" id="posts">
-          <a href="#">
-            <div class="container_post w-full">
-              <div class="flex items-center">
-                <!-- icon +  writer + date-->
-                <img
-                  class="mt-2 mr-2 w-8 h-8 rounded-full"
-                  src="picture/v3.jpg"
-                  alt=""
-                />
-                <p class="mr-5">Karen Nimmo</p>
-                <p>Apr,13,2020</p>
-              </div>
-              <div class="m-auto flex font-bold text-base">
-                <h1 class="ml-5">Mentally Tough People Have a Vibe. Do You?</h1>
-              </div>
-              <div class="flex m-auto justify-around">
-                <div class="font-bold text-sm mt-5">
-                  <p>11min read</p>
-                </div>
-                <div class="flex mt-3">
-                  <a href="#">
-                    <img class="w-10" src="picture/save.svg" alt="" />
-                  </a>
-                  <a href="#">
-                    <!-- delete -->
-                    <img
-                      class="w-8 mt-1"
-                      src="picture/outlined remove.svg"
-                      alt=""
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </a>
-          <hr class="bg-gray-400" />
-        </section>
-        <section class="mx-3" id="posts">
-          <a href="#">
-            <div class="container_post w-full">
-              <div class="flex items-center">
-                <!-- icon +  writer + date-->
-                <img
-                  class="mt-2 mr-2 w-8 h-8 rounded-full"
-                  src="picture/aaazz.jpg"
-                  alt=""
-                />
-                <p class="mr-5">makren jefre</p>
-                <p>Apr,13,2020</p>
-              </div>
-              <div class="m-auto flex font-bold text-base">
-                <h1 class="ml-5">
-                  My Supervisor Relentlessly Bullied Me, So I Did This
-                </h1>
-              </div>
-              <div class="flex m-auto justify-around">
-                <div class="font-bold text-sm mt-5">
-                  <p>6min read</p>
-                </div>
-                <div class="flex mt-3">
-                  <a href="#">
-                    <img class="w-10" src="picture/save.svg" alt="" />
-                  </a>
-                  <a href="#">
-                    <!-- delete -->
-                    <img
-                      class="w-8 mt-1"
-                      src="picture/outlined remove.svg"
-                      alt=""
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </a>
-          <hr class="bg-gray-400" />
-        </section>
-      </div>
-      <div id="secttion_right" class=" mx-5 
-        hidden md:hidden lg:block xl:block
-      ">
-        <h1 class="text-xl font-bold">Staf Picks</h1>
-        <div class="flex items-center">
-          <!-- icon +  writer + date-->
+    <div id="continar1">
+      <div
+        class="add_post rounded-full bg-green-200 w-16 h-16 fixed bottom-0 right-0 mx-5 mb-3 block md:hidden lg:hidden xl:hidden"
+      >
+        <a href="#">
           <img
-            class="mt-2 mr-2 w-8 h-8 rounded-full"
-            src="picture/v3.jpg"
+            class=" wwrite w-10 h-16 flex items-center m-auto justify-center"
+            src="picture/write-svgrepo-com.svg"
             alt=""
           />
-          <p class="mr-5">Karen Nimmo</p>
-          <p>Apr,13,2020</p>
+        </a>
+      </div>
+      <nav class="flex m-auto justify-between items-center">
+        <div class="logo">
+          <img class="w-28" src="picture/logo.png" alt="logo" />
         </div>
-        <div class="m-auto flex font-bold text-base">
-          <h1 class="ml-5 mb-5">Mentally Tough People Have a Vibe. Do You?</h1>
-        </div>
-        <!-- 2 -->
-        <div class="flex items-center">
-          <!-- icon +  writer + date-->
-          <img
-            class="mt-2 mr-2 w-8 h-8 rounded-full"
-            src="picture/picc.webp"
-            alt=""
-          />
-          <p class="mr-5">echo najem</p>
-          <p>Jan,13,2019</p>
-        </div>
-        <div class="m-auto flex font-bold text-base">
-          <h1 class="ml-5 mb-5">Mentally Tough People Have a Vibe. Do You?</h1>
-        </div>
-        <!-- 3 -->
-        <div class="flex items-center">
-          <!-- icon +  writer + date-->
-          <img
-            class="mt-2 mr-2 w-8 h-8 rounded-full"
-            src="picture/aaazz.jpg"
-            alt=""
-          />
-          <p class="mr-5">peter mark</p>
-          <p>Apr,03,2021</p>
-        </div>
-        <div class="m-auto flex font-bold text-base">
-          <h1 class="ml-5 mb-5">Mentally Tough People Have a Vibe. Do You?</h1>
-        </div>
-        <div id="recomented">
-          <!-- Recommended topics -->
-          <h1 class="text-xl font-bold mb-3">Recommended topics</h1>
-          <div class="flex gap-8 mb-5">
-            <div class="bg-gray-300 rounded-2xl text-black font-bold px-5 px-4">
-              <h1>Data science</h1>
-            </div>
-            <div class="bg-gray-300 rounded-2xl text-black font-bold px-5 px-4">
-              <h1>Media</h1>
-            </div>
+        <div class="flex">
+          <div class="mx-3 hidden md:block lg:block xl:block">
+            <a href="#" class="bg-gray-300 rounded-full flex px-4 write">
+              <img
+                src="picture/write-svgrepo-com.svg"
+                class="w-10"
+                alt="write icon"
+              />
+              <h1
+                class="font-bold text-2xl text-black items-center m-auto hover:text-white"
+              >
+                write
+              </h1>
+            </a>
           </div>
-          <div class="flex gap-8 mb-5">
-            <div class="bg-gray-300 rounded-2xl text-black font-bold px-5 px-4">
-              <h1>Creativity</h1>
-            </div>
-            <div class="bg-gray-300 rounded-2xl text-black font-bold px-5 px-4">
-              <h1>Work</h1>
-            </div>
+          <div class="mx-3">
+            <a href="search.html">
+              <img class="w-10" src="picture/search.svg" alt="" />
+            </a>
           </div>
-          <div class="flex gap-8 mb-5">
-            <div class="bg-gray-300 rounded-2xl text-black font-bold px-5 px-4">
-              <h1>Life</h1>
+          <div class="mx-3">
+            <a href="#">
+              <img class="w-10" src="picture/notificatio.svg" alt="" />
+            </a>
+          </div>
+        </div>
+      </nav>
+      <hr class="bg-gray-300" />
+      <!--  -->
+      <section
+        id="container_sections"
+        class="flex m-auto items-center justify-center"
+      >
+        <div id="categ_posts">
+          <main class="" id="categorie">
+            <ul class="flex justify-between items-center font-bold">
+              <li>
+                <a href="#">
+                  <img class="w-10" src="picture/plus.svg" alt="" />
+                </a>
+              </li>
+              <li id="first_cat " class="mr-3">For you</li>
+              <li  class="mr-3">Software development</li>
+              <li  class="mr-3">technology</li>
+            </ul>
+            <hr class="bg-gray-200" />
+          </main>
+          <!--div class body -->
+          <div class="body"></div>
+        </div>
+        <div
+          id="secttion_right"
+          class="mx-5 hidden md:hidden lg:block xl:block"
+        >
+          <h1 class="text-xl font-bold">Staf Picks</h1>
+          <div class="flex items-center">
+            <!-- icon +  writer + date-->
+            <img
+              class="mt-2 mr-2 w-8 h-8 rounded-full"
+              src="picture/v3.jpg"
+              alt=""
+            />
+            <p class="mr-5">Karen Nimmo</p>
+            <p>Apr,13,2020</p>
+          </div>
+          <div class="m-auto flex font-bold text-base">
+            <h1 class="ml-5 mb-5">
+              Mentally Tough People Have a Vibe. Do You?
+            </h1>
+          </div>
+          <!-- 2 -->
+          <div class="flex items-center">
+            <!-- icon +  writer + date-->
+            <img
+              class="mt-2 mr-2 w-8 h-8 rounded-full"
+              src="picture/picc.webp"
+              alt=""
+            />
+            <p class="mr-5">echo najem</p>
+            <p>Jan,13,2019</p>
+          </div>
+          <div class="m-auto flex font-bold text-base">
+            <h1 class="ml-5 mb-5">
+              Mentally Tough People Have a Vibe. Do You?
+            </h1>
+          </div>
+          <!-- 3 -->
+          <div class="flex items-center">
+            <!-- icon +  writer + date-->
+            <img
+              class="mt-2 mr-2 w-8 h-8 rounded-full"
+              src="picture/aaazz.jpg"
+              alt=""
+            />
+            <p class="mr-5">peter mark</p>
+            <p>Apr,03,2021</p>
+          </div>
+          <div class="m-auto flex font-bold text-base">
+            <h1 class="ml-5 mb-5">
+              Mentally Tough People Have a Vibe. Do You?
+            </h1>
+          </div>
+          <div id="recomented">
+            <!-- Recommended topics -->
+            <h1 class="text-xl font-bold mb-3">Recommended topics</h1>
+            <div class="flex gap-8 mb-5">
+              <div
+                class="bg-gray-300 rounded-2xl text-black font-bold px-5 px-4"
+              >
+                <h1>Data science</h1>
+              </div>
+              <div
+                class="bg-gray-300 rounded-2xl text-black font-bold px-5 px-4"
+              >
+                <h1>Media</h1>
+              </div>
             </div>
-            <div class="bg-gray-300 rounded-2xl text-black font-bold px-5 px-4">
-              <h1>Relationships</h1>
+            <div class="flex gap-8 mb-5">
+              <div
+                class="bg-gray-300 rounded-2xl text-black font-bold px-5 px-4"
+              >
+                <h1>Creativity</h1>
+              </div>
+              <div
+                class="bg-gray-300 rounded-2xl text-black font-bold px-5 px-4"
+              >
+                <h1>Work</h1>
+              </div>
+            </div>
+            <div class="flex gap-8 mb-5">
+              <div
+                class="bg-gray-300 rounded-2xl text-black font-bold px-5 px-4"
+              >
+                <h1>Life</h1>
+              </div>
+              <div
+                class="bg-gray-300 rounded-2xl text-black font-bold px-5 px-4"
+              >
+                <h1>Relationships</h1>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <!-- fin post deja create -->
+      <footer class="flex bg-blue-300 text-black justify-around px-4 pb-5">
+        <div class="m-auto items-center">
+          <h1>&copy;2024 <span class="font-bold text-xl">MicroWrite</span></h1>
+        </div>
+        <div>
+          <img
+            class="w-44 m-auto items-center"
+            src="picture/logo-removebg-preview (2).png"
+            alt=""
+          />
+        </div>
+        <div class="flex items-center m-auto">
+          <a href="#"><img class="w-10" src="picture/facebook.svg" alt="" /></a>
+          <a href="#"
+            ><img class="w-10 ml-3" src="picture/instagram.svg" alt=""
+          /></a>
+          <a href="#"><img class="w-10 ml-5" src="picture/x.svg" alt="" /></a>
+        </div>
+      </footer>
 
-    <!-- fin post deja create -->
-    <footer class="flex bg-blue-300 text-black justify-around px-4 pb-5">
-      <div class="m-auto items-center">
-        <h1>&copy;2024 <span class="font-bold text-xl">MicroWrite</span></h1>
+    </div>
+    <div id="continar2">
+      <nav class="flex m-auto justify-between items-center">
+        <div>
+          <a href="#" class="close2">
+            <img
+              class="w-12 h-12 flex items-center"
+              src="picture/return.svg"
+              alt="icon return"
+            />
+          </a>
+        </div>
+        <div class="logo">
+          <img class="w-28" src="picture/logo.png" alt="logo" />
+        </div>
+        <div class="flex">
+          <div>
+            <a href="search.html">
+              <img class="w-16" src="picture/search.svg" alt="" />
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <img class="w-16" src="picture/notificatio.svg" alt="" />
+            </a>
+          </div>
+        </div>
+      </nav>
+      <hr class="bg-gray-100" />
+      <!--  -->
+      <div
+        class="w-full md:w-4/6 lg:w-4/6 xl:4/6 m-auto items-center justify-center"
+      >
+        <main id="postsContainer" class="items-center mx-5">
+          <div class="" id="title_home">
+            <h1 class="font-bold text-3xl mb-3 title_de_post"></h1>
+          </div>
+          <div id="image_post">
+            <img
+              class="w-full rounded-2xl image_de_post"
+              src="picture/laravel.jpeg"
+              alt=""
+            />
+          </div>
+          <div class="text font-bold italic my-3">
+            <p class="description_de_post">
+              Creating a RESTful API CRUD application in Laravel 11 with best
+              practices involves several steps, including setting up your
+              Laravel application, defining routes, validation, model,
+              resources, creating controllers, implementing the Repository
+              design pattern, and working with models. Here’s a step-by-step
+              guide on how to achieve this:
+            </p>
+          </div>
+        </main>
+        <section class="mt-16" id="">
+          <div class="article md:text-center lg:text-center xl:text-center">
+            <img
+              src="picture/pic.webp"
+              class="w-96 h-56 items-center m-auto rounded-3xl"
+              alt=""
+            />
+            <h1 class="text-2xl font-bold mx-5">
+              Implementing WebSocket in Go
+            </h1>
+            <p class="text-base font-bold mb-10 mx-5">
+              Enhancing Real-Time Communication in a Go Applications using
+              WebSocket
+            </p>
+          </div>
+          <hr class="mb-8" />
+          <div class="article md:text-center lg:text-center xl:text-center">
+            <img
+              src="picture/picc.webp"
+              class="w-96 h-56 items-center m-auto rounded-3xl"
+              alt=""
+            />
+            <h1 class="text-2xl font-bold mx-5">
+              Implementing WebSocket in Go
+            </h1>
+            <p class="text-base font-bold mb-10 mx-5">
+              Enhancing Real-Time Communication in a Go Applications using
+              WebSocket
+            </p>
+          </div>
+          <hr class="mb-8" />
+          <div class="article md:text-center lg:text-center xl:text-center">
+            <img
+              src="picture/sdsd.webp"
+              class="w-96 h-56 items-center m-auto rounded-3xl"
+              alt=""
+            />
+            <h1 class="text-2xl font-bold mx-5">
+              Implementing WebSocket in Go
+            </h1>
+            <p class="text-base font-bold mb-10 mx-5">
+              Enhancing Real-Time Communication in a Go Applications using
+              WebSocket
+            </p>
+          </div>
+        </section>
       </div>
-      <div>
-        <img
-          class="w-44 m-auto items-center"
-          src="picture/logo-removebg-preview (2).png"
-          alt=""
-        />
+
+      <!-- banner like and save and comments -->
+      <div class="flex w-full justify-around bg-gray-200 fixed bottom-0">
+        <div class="flex">
+          <a href="#" class="flex" id="applaudise">
+            <img class="w-10" src="picture/applause.svg" id="image_like"  alt="" />
+          <p class="font-bold">1k</p>
+          </a>
+        </div>
+        <div>
+          <a href="comment.html" class="flex">
+            <img class="w-10" src="picture/comment.svg" alt="" />
+            <p class="font-bold">3.5k</p>
+          </a>
+        </div>
+        <div class="flex">
+          <img
+            class="w-10"
+            src="picture/share-ios-export-svgrepo-com.svg"
+            alt=""
+          />
+        </div>
+        <div class="flex">
+          <a href="#" id="sv">
+            <img class="w-10" id="image_save" src="picture/save.svg" alt="" />
+          </a>
+        </div>
       </div>
-      <div class="flex items-center m-auto">
-        <a href="#"><img class="w-10" src="picture/facebook.svg" alt="" /></a>
-        <a href="#"
-          ><img class="w-10 ml-3" src="picture/instagram.svg" alt=""
-        /></a>
-        <a href="#"><img class="w-10 ml-5" src="picture/x.svg" alt="" /></a>
-      </div>
-    </footer>
+      <!-- footer this -->
+      <footer class="flex bg-blue-300 text-black justify-around px-4 pb-5">
+        <div class="m-auto items-center">
+          <h1>&copy;2024 <span class="font-bold text-xl">MicroWrite</span></h1>
+        </div>
+        <div>
+          <img
+            class="w-44 m-auto items-center"
+            src="picture/logo-removebg-preview (2).png"
+            alt=""
+          />
+        </div>
+        <div class="flex items-center m-auto">
+          <a href="#"><img class="w-10" src="picture/facebook.svg" alt="" /></a>
+          <a href="#"
+            ><img class="w-10 ml-3" src="picture/instagram.svg" alt=""
+          /></a>
+          <a href="#"><img class="w-10 ml-5" src="picture/x.svg" alt="" /></a>
+        </div>
+      </footer>
+    </div>
+    <div id="continar3" class="add">
+      <section id="add_post" class="bg-white">
+        <div>
+          <a href="#" class="close">
+            <img
+              class="w-12 h-12 flex items-center"
+              src="picture/return.svg"
+              alt="icon return"
+            />
+          </a>
+        </div>
+        <div class="wrapper bg-gray-300 mt-5 rounded-3xl mx-5">
+          <input
+            type="text"
+            id="title"
+            contenteditable="true"
+            placeholder="Title"
+            class="w-full h-20 bg-gray-300 rounded-3xl outline-none text-3xl px-5"
+          />
+          <input
+            type="text"
+            id="description"
+            contenteditable="true"
+            placeholder="Tell your story"
+            class="w-full h-60 bg-gray-300 rounded-3xl outline-none text-xl px-5"
+          />
+
+          <!-- <img class="w-8" src="picture/imag.svg" alt="" /> -->
+          <hr />
+          <div class="flex items-center justify-around mt-5 pb-8">
+            <div class="flex">
+              <ul class="flex">
+                <li>
+                  <div
+                    class="flex bg-yellow-500 px-10 rounded-3xl py-2 font-bold"
+                  >
+                    <img class="w-8" src="picture/imag.svg" alt="" />
+                    <label
+                      for="input_file"
+                      class="text-white text-2xl px-10 m-auto hover:text-black"
+                      >Add Picture</label
+                    >
+                  </div>
+                  <input
+                    type="file"
+                    accept="image/jpeg, image/png, image/jpg"
+                    name=""
+                    id="input_file"
+                    class="hidden"
+                  />
+                </li>
+              </ul>
+            </div>
+            <div>
+              <a
+                href="#"
+                id="btnz"
+                class="bg-blue-600 rounded-3xl w-40 text-white text-xl px-5 py-2 hover:text-black font-bold"
+                >Publish</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="container4" class="comment">
+      
+    </div>
+    <script src="./script.js"></script>
   </body>
 </html>

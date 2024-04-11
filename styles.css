@@ -12,6 +12,15 @@ body {
 input {
   border: 0px;
 }
-.w1{
+.w1 {
   background-image: url(picture/Yellow\ Floral\ Quote\ Motivational\ Desktop\ Wallpaper.png);
+}
+#continar1 {
+  display: block;
+}
+#continar2 {
+  display: none;
+}
+#continar3 {
+  display: none;
 }
