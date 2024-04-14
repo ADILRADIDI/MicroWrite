@@ -150,6 +150,7 @@ function add_post() {
     });
   });
 }
+
 btnz.addEventListener("click", add_post);
 //afeer click like change source
 let like = document.getElementById("applaudise");
@@ -166,142 +167,128 @@ save.addEventListener("click", function () {
 
 //add comment
 let comm = Array.from(document.querySelectorAll(".cmt_aa"));
-comm.forEach((ele, i) => {
-  ele.addEventListener("click", function () {
+comm.forEach((el, i) => {
+  el.addEventListener("click", function () {
     let con2 = document.querySelector("#continar2");
     con2.style.display = "none";
-    let con4 = document.querySelector("#container4");
-    con4.style.display = "block";
+    continar4.style.display = "block";
   });
 });
 
-
 // Create a div element with class "comment"
 let diiv = document.createElement("div");
-diiv.classList.add("comment hidden");
-// Append the div to "continar4" (assuming it's already defined)
+// Append div in containe4
 continar4.appendChild(diiv);
 
-// Create a section element for comments
-let Sect_ion = document.createElement("section");
-Sect_ion.id = "comment";
+let sectionOne = document.createElement("section");
+diiv.appendChild(sectionOne);
+// firts div inside section one
+let div_one = document.createElement("div");
+div_one.classList.add("flex");
+sectionOne.appendChild(div_one);
+//img and link inside first div in section one
+let link_div_one = document.createElement("a");
+link_div_one.href = "index.html";
+div_one.appendChild(link_div_one);
+let img_link_div_one = document.createElement("img");
+img_link_div_one.classList.add("w-16");
+img_link_div_one.src = "picture/return.svg";
+// img_link_div_one.href = "index.html";
+link_div_one.appendChild(img_link_div_one);
+//heading h1 inside first div in section one
+let he1 = document.createElement("h1");
+he1.classList = "m-auto items-center font-bold text-3xl";
+he1.textContent = "Responses";
+div_one.appendChild(he1);
+// hr
+let hrr = document.createElement("hr");
+sectionOne.appendChild(hrr);
 
+//second div inside section one
+let div_two = document.createElement("div");
+div_two.classList = "bg-yellow-100 m-auto items-center w-4/5 mt-5 rounded-2xl";
+sectionOne.appendChild(div_two);
+// input text for take comments from user inside div_two
+let first_input = document.createElement("input");
+first_input.classList = "inpt w-full h-56 outline-none bg-yellow-100 text-2xl";
+first_input.type = "text";
+first_input.placeholder = "what are you thoughts?";
+first_input.contentEditable = "true";
+div_two.appendChild(first_input);
 
+let sm_div_two = document.createElement("div");
+div_two.appendChild(sm_div_two);
 
-// Create header for comments section
-let header_div = document.createElement("div");
-header_div.classList.add("flex");
+let sm_link = document.createElement("a");
+sm_link.classList =
+  "text-white text-xl bg-yellow-500 w-36 rounded-2xl font-bold m-auto items-center justify-center flex hover:text-black";
+sm_link.href = "#";
+sm_link.classList.add("repond");
+sm_link.textContent = "Repond";
+sm_div_two.appendChild(sm_link);
 
-let header_a = document.createElement("a");
-header_a.href = "post.html";
-let headerImage = document.createElement("img");
-headerImage.classList.add("w-16");
-headerImage.src = "picture/return.svg";
-header_a.appendChild(headerImage);
-header_div.appendChild(header_a);
+let hrrr = document.createElement("hr");
+hrrr.classList.add("mt-8");
+sectionOne.appendChild(hrrr);
 
-let header_title = document.createElement("h1");
-header_title.classList.add("m-auto", "items-center", "font-bold", "text-3xl");
-header_title.textContent = "Responses";
-header_div.appendChild(header_title);
+// ---------------------------------------
+// --------------------------------------------------***
+// -----------------------------------------------------------
+// let inpt = document.getElementsByClassName("inpt").value;
 
-// Append header to the section
-Sect_ion.appendChild(header_div);
-Sect_ion.appendChild(document.createElement("hr"));
+let reply = Array.from(document.querySelectorAll(".repond"));
+reply.forEach((e, i) => {
+  e.addEventListener("click", function () {
+    console.log("hi adil");
+    sectionTwo.classList.remove("hidden");
+    let inppt = document.querySelector(".inpt");
+    let tx = document.querySelectorAll(".text_com");
+    tx.forEach((e) => {
+      e.textContent = inppt.value;
+    });
+  });
+});
 
-// Create rectangle for input
-let Rectangle = document.createElement("div");
-Rectangle.classList.add(
-  "bg-yellow-100",
-  "m-auto",
-  "items-center",
-  "w-4/5",
-  "mt-5",
-  "rounded-2xl",
-);
-let input_field = document.createElement("input");
-input_field.type = "text";
-input_field.contentEditable = true;
-input_field.placeholder = "what are you thoughts?";
-input_field.classList.add(
-  "w-full",
-  "h-56",
-  "outline-none",
-  "bg-yellow-100",
-  "text-2xl",
-  "input_comment"
-);
-Rectangle.appendChild(input_field);
+// section 2 for list comments okay
+let sectionTwo = document.createElement("section");
+sectionTwo.classList.add("hidden");
+diiv.appendChild(sectionTwo);
 
-// Create button for publishing reply
-let button_dv = document.createElement("div");
-let button_a = document.createElement("a");
-button_a.href = "#";
-button_a.textContent = "Respond";
-button_a.classList.add(
-  "text-white",
-  "text-xl",
-  "bg-yellow-500",
-  "w-36",
-  "rounded-2xl",
-  "font-bold",
-  "m-auto",
-  "items-center",
-  "justify-center",
-  "flex",
-  "hover:text-black"
-);
-button_dv.appendChild(button_a);
-Rectangle.appendChild(button_dv);
+let div_1 = document.createElement("div");
+div_1.id = "first_comment";
+sectionTwo.appendChild(div_1);
 
-// Append rectangle to the section
-Sect_ion.appendChild(Rectangle);
-Sect_ion.appendChild(document.createElement("hr"));
+let div_1_sm = document.createElement("div");
+div_1_sm.classList.add("flex");
+div_1.appendChild(div_1_sm);
 
-// Append section to the div container "diiv"
-diiv.appendChild(Sect_ion);
+let img_2 = document.createElement("img");
+img_2.classList = "rounded-full w-10 h-10 mx-3";
+img_2.src = "picture/aaazz.jpg";
+div_1_sm.appendChild(img_2);
 
-// Create second section for listing comments
-let listCommentsSection = document.createElement("section");
-listCommentsSection.id = "list_comments";
+let hy = document.createElement("h1");
+hy.classList = "text-xl font-bold";
+hy.textContent = "smart man";
+div_1_sm.appendChild(hy);
 
-// Create a comment
-let commentDiv = document.createElement("div");
-commentDiv.id = "first_comment";
-let commentAccountDiv = document.createElement("div");
-commentAccountDiv.classList.add("flex");
-let commentAccountImage = document.createElement("img");
-commentAccountImage.src = "picture/aaazz.jpg";
-commentAccountImage.alt = "";
-commentAccountImage.classList.add("rounded-full", "w-10", "h-10", "mx-3");
-commentAccountDiv.appendChild(commentAccountImage);
-let commentAccountTitle = document.createElement("h1");
-commentAccountTitle.textContent="smart man"
-commentAccountTitle.classList.add("text-xl", "font-bold");
-commentAccountDiv.appendChild(commentAccountTitle);
-commentDiv.appendChild(commentAccountDiv);
-let commentTextDiv = document.createElement("div");
-commentTextDiv.id = "text";
-let commentText = document.createElement("p");
-commentText.classList.add("text-base", "font-medium", "mx-4");
-commentText.textContent="i have this and we will go to ..... "
-commentTextDiv.appendChild(commentText);
-commentDiv.appendChild(commentTextDiv);
-let commentLinkDiv = document.createElement("div");
-let commentLikeLink = document.createElement("a");
-commentLikeLink.href = "#";
-let commentLikeImage = document.createElement("img");
-commentLikeImage.src = "picture/applause.svg";
-commentLikeImage.classList.add("w-10", "mx-5", "mt-3");
-commentLikeLink.appendChild(commentLikeImage);
-commentLinkDiv.appendChild(commentLikeLink);
-commentDiv.appendChild(commentLinkDiv);
-listCommentsSection.appendChild(commentDiv);
-listCommentsSection.appendChild(document.createElement("hr"));
+let div_2_sm = document.createElement("div");
+div_2_sm.id = "text";
+div_1.appendChild(div_2_sm);
 
-// Append the second section to the div container "diiv"
-diiv.appendChild(listCommentsSection);
+let pr = document.createElement("p");
+pr.classList = "text_com text-base font-medium mx-4";
+// pr.textContent = "";
+div_2_sm.appendChild(pr);
 
-// Append the div container to the body
-document.body.appendChild(diiv);
+let div_3_sm = document.createElement("div");
+div_1.appendChild(div_3_sm);
 
+let link_sm_1 = document.createElement("a");
+link_sm_1.id = "applaudise";
+link_sm_1.href = "#";
+
+let img_3 = document.createElement("img");
+img_3.classList = "w-10 mx-5 mt-3";
+img_3.src = "picture/applause.svg";
+div_3_sm.appendChild(img_3);
