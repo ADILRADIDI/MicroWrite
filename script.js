@@ -51,6 +51,7 @@ function add_post() {
 
   document.getElementById("title").value = "";
   document.getElementById("description").value = "";
+  document.getElementById("urlInput").value = "";
   continar1.style.display = "block";
   continar3.style.display = "none";
   titles.push(text1);
@@ -139,6 +140,7 @@ function add_post() {
       continar1.style.display = "none";
       continar2.style.display = "block";
       title_de_post.textContent = titles[i];
+      title_de_post.classList.add("text-4xl");
       image_de_post.src = image;
       description_de_post.textContent = descriptions[i];
     });
@@ -179,9 +181,9 @@ comm.forEach((el, i) => {
     continar4.style.display = "block";
     let inputElements = document.querySelectorAll(".inpt");
     // comment.push(text3);
-    inputElements.forEach(input => {
-    let val = input.value.trim();
-    })
+    inputElements.forEach((input) => {
+      let val = input.value.trim();
+    });
   });
 });
 
