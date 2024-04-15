@@ -9,9 +9,13 @@ let write = document.querySelector(".write");
 let wwrite = document.querySelector(".wwrite");
 
 let btnz = document.querySelector("#btnz");
-
+//btn return section add post two inputs..
 let close = document.querySelector(".close");
+///btn retunr section view post .
 let close2 = document.querySelector(".close2");
+//
+let close_comment = document.querySelectorAll("#id1");
+
 let body = document.querySelector(".body");
 let title_de_post = document.querySelector(".title_de_post");
 let image_de_post = document.querySelector(".image_de_post");
@@ -20,6 +24,8 @@ let n_post = 0;
 let titles = [];
 let descriptions = [];
 let images = [];
+//array for stocker comments
+let comment = [];
 
 write.onclick = function () {
   continar1.style.display = "none";
@@ -44,11 +50,11 @@ function add_post() {
   let text2 = document.getElementById("description").value;
   let image = document.getElementById("input_file").files[0];
 
-  titles.push(text1);
   document.getElementById("title").value = "";
   document.getElementById("description").value = "";
   continar1.style.display = "block";
   continar3.style.display = "none";
+  titles.push(text1);
   descriptions.push(text2);
   images.push(image);
 
@@ -169,6 +175,9 @@ save.addEventListener("click", function () {
 let comm = Array.from(document.querySelectorAll(".cmt_aa"));
 comm.forEach((el, i) => {
   el.addEventListener("click", function () {
+    // //add fois comment
+    // let text3 = document.querySelectorAll(".inpt").value;
+    // comment.push(text3);
     let con2 = document.querySelector("#continar2");
     con2.style.display = "none";
     continar4.style.display = "block";
@@ -188,8 +197,18 @@ div_one.classList.add("flex");
 sectionOne.appendChild(div_one);
 //img and link inside first div in section one
 let link_div_one = document.createElement("a");
-link_div_one.href = "index.html";
+link_div_one.href = "#";
+link_div_one.classList.add("close_com");
+link_div_one.id = "id1";
 div_one.appendChild(link_div_one);
+
+// ...
+// close_comment
+link_div_one.onclick = () => {
+  continar1.style.display = "block";
+  continar4.style.display = "none";
+};
+
 let img_link_div_one = document.createElement("img");
 img_link_div_one.classList.add("w-16");
 img_link_div_one.src = "picture/return.svg";
@@ -292,3 +311,12 @@ let img_3 = document.createElement("img");
 img_3.classList = "w-10 mx-5 mt-3";
 img_3.src = "picture/applause.svg";
 div_3_sm.appendChild(img_3);
+
+//remove default prevent in like and comments
+document.getElementById("applaudise").addEventListener("click", function (ev) {
+  ev.preventDefault();
+});
+///save default prevent dont scroll page
+document.getElementById("image_save").addEventListener("click", function (ev) {
+  ev.preventDefault();
+});
