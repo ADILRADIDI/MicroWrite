@@ -24,8 +24,6 @@ let n_post = 0;
 let titles = [];
 let descriptions = [];
 let images = [];
-//array for stocker comments
-let comment = [];
 
 write.onclick = function () {
   continar1.style.display = "none";
@@ -131,7 +129,6 @@ function add_post() {
   let hr1 = document.createElement("hr");
   hr1.classList = "bg-gray-400";
   body.appendChild(hr1);
-
   n_post++;
 
   //affich container post
@@ -171,16 +168,19 @@ save.addEventListener("click", function () {
   imej.src = "picture/saveclick.svg";
 });
 
+let comment = [];
 //add comment
 let comm = Array.from(document.querySelectorAll(".cmt_aa"));
 comm.forEach((el, i) => {
   el.addEventListener("click", function () {
-    // //add fois comment
-    // let text3 = document.querySelectorAll(".inpt").value;
-    // comment.push(text3);
     let con2 = document.querySelector("#continar2");
     con2.style.display = "none";
     continar4.style.display = "block";
+    let inputElements = document.querySelectorAll(".inpt");
+    // comment.push(text3);
+    inputElements.forEach(input => {
+    let val = input.value.trim();
+    })
   });
 });
 
@@ -258,7 +258,6 @@ sectionOne.appendChild(hrrr);
 let reply = Array.from(document.querySelectorAll(".repond"));
 reply.forEach((e, i) => {
   e.addEventListener("click", function () {
-    console.log("hi adil");
     sectionTwo.classList.remove("hidden");
     let inppt = document.querySelector(".inpt");
     let tx = document.querySelectorAll(".text_com");
