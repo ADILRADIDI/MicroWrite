@@ -18,6 +18,7 @@ let close_comment = document.querySelectorAll("#id1");
 
 let body = document.querySelector(".body");
 let title_de_post = document.querySelector(".title_de_post");
+//def selector inp image--
 let image_de_post = document.querySelector(".image_de_post");
 let description_de_post = document.querySelector(".description_de_post");
 let n_post = 0;
@@ -46,7 +47,7 @@ close2.onclick = function () {
 function add_post() {
   let text1 = document.getElementById("title").value;
   let text2 = document.getElementById("description").value;
-  let image = document.getElementById("input_file").files[0];
+  let image = document.getElementById("urlInput").value;
 
   document.getElementById("title").value = "";
   document.getElementById("description").value = "";
@@ -138,7 +139,7 @@ function add_post() {
       continar1.style.display = "none";
       continar2.style.display = "block";
       title_de_post.textContent = titles[i];
-      image_de_post.src = "picture/pic.webp";
+      image_de_post.src = image;
       description_de_post.textContent = descriptions[i];
     });
   });
