@@ -1,10 +1,20 @@
+// localStorage.clear();
+let Posts = [{ title: "", description: "", image: "" }];
+const Posts_f = JSON.parse(localStorage.getItem("Posts"));
+if (Posts_f) {
+  Posts.push(...Posts_f);
+}
+
+function storeInLocal() {
+  localStorage.setItem("Posts", JSON.stringify(Posts));
+}
+
 let continar1 = document.querySelector("#continar1");
 let continar2 = document.querySelector("#continar2");
 let continar3 = document.querySelector("#continar3");
 let continar4 = document.querySelector("#container4");
 // button write in version desktop and tablette
 let write = document.querySelector(".write");
-
 // button write in version mobile
 let wwrite = document.querySelector(".wwrite");
 
@@ -17,15 +27,14 @@ let close2 = document.querySelector(".close2");
 let close_comment = document.querySelectorAll("#id1");
 
 let body = document.querySelector(".body");
+//def selector inp title--
 let title_de_post = document.querySelector(".title_de_post");
 //def selector inp image--
 let image_de_post = document.querySelector(".image_de_post");
+//def selector inp description--
 let description_de_post = document.querySelector(".description_de_post");
-let n_post = 0;
-let titles = [];
-let descriptions = [];
-let images = [];
 
+// BTN CLOSE IN ALL PAGES
 write.onclick = function () {
   continar1.style.display = "none";
   continar3.style.display = "block";
@@ -47,16 +56,19 @@ close2.onclick = function () {
 function add_post() {
   let text1 = document.getElementById("title").value;
   let text2 = document.getElementById("description").value;
-  let image = document.getElementById("urlInput").value;
+  let image_src = document.getElementById("urlInput").value;
 
   document.getElementById("title").value = "";
   document.getElementById("description").value = "";
   document.getElementById("urlInput").value = "";
   continar1.style.display = "block";
   continar3.style.display = "none";
-  titles.push(text1);
-  descriptions.push(text2);
-  images.push(image);
+
+  let Post = { title: text1, description: text2, image: image_src };
+  Posts.push(Post);
+ 
+  //save in localstorage
+  storeInLocal();
 
   let section = document.createElement("section");
   section.classList = "mx-3";
@@ -96,7 +108,8 @@ function add_post() {
 
   let h11 = document.createElement("h1");
   h11.classList = "ml-5 mr-10 w-100";
-  h11.textContent = titles[n_post];
+  // get from local storage
+  h11.textContent = Post.title;
   div3.appendChild(h11);
 
   let div4 = document.createElement("div");
@@ -122,6 +135,16 @@ function add_post() {
 
   let a1 = document.createElement("a");
   div5.appendChild(a1);
+  //edit post
+  let imag22 = document.createElement("img");
+  imag22.classList = "w-8";
+  imag22.src = "picture/edit.svg";
+  div5.appendChild(imag22);
+
+  let a11 = document.createElement("a");
+  a11.classList.add("link_edit");
+  a11.href = "#";
+  div5.appendChild(a11);
 
   let imag3 = document.createElement("img");
   imag3.classList = "w-8 mt-1 remove_post";
@@ -131,18 +154,19 @@ function add_post() {
   let hr1 = document.createElement("hr");
   hr1.classList = "bg-gray-400";
   body.appendChild(hr1);
-  n_post++;
+  // n_post++;
 
-  //affich container post
+  // affich container post <>
   let container_post = Array.from(document.querySelectorAll(".container_post"));
-  container_post.forEach((ele, i) => {
-    ele.addEventListener("click", function () {
+  container_post.forEach((e) => {
+    e.addEventListener("click", function () {
       continar1.style.display = "none";
       continar2.style.display = "block";
-      title_de_post.textContent = titles[i];
+      title_de_post.textContent = Post.title;
+      image_de_post.src = Post.image;
+      description_de_post.textContent = Post.description;
+      description_de_post.classList.add("text-xl");
       title_de_post.classList.add("text-4xl");
-      image_de_post.src = image;
-      description_de_post.textContent = descriptions[i];
     });
   });
 
@@ -151,7 +175,6 @@ function add_post() {
   let d1 = Array.from(document.querySelectorAll(".ps"));
   remove_post.forEach((x, i) => {
     x.addEventListener("click", function () {
-      console.log(d1[i]);
       d1[i].remove();
     });
   });
@@ -181,9 +204,8 @@ comm.forEach((el, i) => {
     continar4.style.display = "block";
     let inputElements = document.querySelectorAll(".inpt");
     // comment.push(text3);
-    inputElements.forEach((input) => {
-      let val = input.value.trim();
-    });
+    // inputElements.forEach((input) => {
+    //   let val = input.value.trim();
   });
 });
 
@@ -265,7 +287,8 @@ reply.forEach((e, i) => {
     let inppt = document.querySelector(".inpt");
     let tx = document.querySelectorAll(".text_com");
     tx.forEach((e) => {
-      e.textContent = inppt.value;
+      console.log(e);
+      e.append(inppt.value);
     });
   });
 });
@@ -299,7 +322,6 @@ div_1.appendChild(div_2_sm);
 
 let pr = document.createElement("p");
 pr.classList = "text_com text-base font-medium mx-4";
-// pr.textContent = "";
 div_2_sm.appendChild(pr);
 
 let div_3_sm = document.createElement("div");
@@ -322,3 +344,24 @@ document.getElementById("applaudise").addEventListener("click", function (ev) {
 document.getElementById("image_save").addEventListener("click", function (ev) {
   ev.preventDefault();
 });
+
+// btn close page search
+let input_search = document.getElementById("search_input");
+let botton = document.getElementById("search");
+botton.addEventListener("click", () => {
+  // display block input text
+  input_search.classList.remove("hidden");
+  input_search.classList.add("block");
+});
+let search_value = input_search.value;
+
+//search
+function searchPostsByTitle(search_value) {
+  const searchTerm = search_value.toLowerCase();
+  const searchResults = Posts.filter((Post) =>
+    Post.title.toLowerCase().includes(searchTerm)
+  );
+  return searchResults;
+}
+const searchResults = searchPostsByTitle(search_value);
+// console.log("searching post:", searchResults);

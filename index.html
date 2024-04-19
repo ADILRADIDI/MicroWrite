@@ -29,7 +29,8 @@
         <div class="logo">
           <img class="w-28" src="picture/logo.png" alt="logo" />
         </div>
-        <div class="flex">
+        <div class="flex m-auto items-center">
+          <!-- btn write -->
           <div class="mx-3 hidden md:block lg:block xl:block">
             <a href="#" class="bg-gray-300 rounded-full flex px-4 write">
               <img
@@ -44,11 +45,32 @@
               </h1>
             </a>
           </div>
+
+          <!-- search -->
+          <div class="mb-5">
+            <form action="">
+              <input
+                id="search_input"
+                type="text"
+                placeholder="text"
+                class="bg-gray-300 w-56 h-8 rounded-2xl mt-7 px-2 hidden"
+              />
+            </form>
+            <!-- result searching -->
+            <div id="resultSearch" class="hidden bg-gray-300 text-lg font-bold">
+              <ul>
+                <li id="li"><p></p></li>
+              </ul>
+            </div>
+          </div>
+
+          <!--btnSearch-->
           <div class="mx-3">
-            <a href="search.html">
+            <a href="#" id="search">
               <img class="w-10" src="picture/search.svg" alt="" />
             </a>
           </div>
+          <!--notification-->
           <div class="mx-3">
             <a href="#">
               <img class="w-10" src="picture/notificatio.svg" alt="" />
