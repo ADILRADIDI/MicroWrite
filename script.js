@@ -1,9 +1,9 @@
 // localStorage.clear();
 let Posts = [{ title: "", description: "", image: "" }];
 const Posts_f = JSON.parse(localStorage.getItem("Posts"));
-if (Posts_f) {
-  Posts.push(...Posts_f);
-}
+// if (Posts_f) {
+//   Posts.push(...Posts_f);
+// }
 
 function storeInLocal() {
   localStorage.setItem("Posts", JSON.stringify(Posts));
@@ -51,9 +51,7 @@ close2.onclick = function () {
   continar1.style.display = "block";
   continar2.style.display = "none";
 };
-
-// function add post
-function add_post() {
+function dispPost() {
   let text1 = document.getElementById("title").value;
   let text2 = document.getElementById("description").value;
   let image_src = document.getElementById("urlInput").value;
@@ -66,9 +64,6 @@ function add_post() {
 
   let Post = { title: text1, description: text2, image: image_src };
   Posts.push(Post);
- 
-  //save in localstorage
-  storeInLocal();
 
   let section = document.createElement("section");
   section.classList = "mx-3";
@@ -154,7 +149,6 @@ function add_post() {
   let hr1 = document.createElement("hr");
   hr1.classList = "bg-gray-400";
   body.appendChild(hr1);
-  // n_post++;
 
   // affich container post <>
   let container_post = Array.from(document.querySelectorAll(".container_post"));
@@ -169,6 +163,14 @@ function add_post() {
       title_de_post.classList.add("text-4xl");
     });
   });
+}
+// function add post
+function add_post() {
+  dispPost();
+  //save in localstorage
+  storeInLocal();
+
+  // n_post++;
 
   //remove post after adding
   let remove_post = Array.from(document.querySelectorAll(".remove_post"));
@@ -353,15 +355,37 @@ botton.addEventListener("click", () => {
   input_search.classList.remove("hidden");
   input_search.classList.add("block");
 });
-let search_value = input_search.value;
 
-//search
-function searchPostsByTitle(search_value) {
-  const searchTerm = search_value.toLowerCase();
+let search_value = input_search.value;
+let searchTerm;
+let search_input = document.getElementById("search_input");
+search_input.addEventListener("change", (event) => {
+  event.preventDefault();
+  searchTerm = search_input.value.toLowerCase();
+
   const searchResults = Posts.filter((Post) =>
     Post.title.toLowerCase().includes(searchTerm)
   );
-  return searchResults;
+  funtionDisplay(searchResults);
+});
+
+let resultSearch = document.getElementById("resultSearch");
+function funtionDisplay(result) {
+  let postContainer = document.getElementById("resultSearch");
+  postContainer.innerHTML = " ";
+  if (result.length === 0) {
+    postContainer.innerHTML = "Not found";
+  } else {
+    result.forEach((Posts) => {
+      let html = `<li>${Posts.title}</li>`;
+      postContainer.innerHTML += html;
+      resultSearch.classList.remove("hidden");
+      resultSearch.classList.add("block");
+      if (searchTerm == "") {
+        postContainer.innerHTML = `<p>No result found</p>`;
+        resultSearch.classList.remove("block");
+        resultSearch.classList.add("hidden");
+      }
+    });
+  }
 }
-const searchResults = searchPostsByTitle(search_value);
-// console.log("searching post:", searchResults);
